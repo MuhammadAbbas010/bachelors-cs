@@ -1,0 +1,12 @@
+experiments to try 
+
+my observations
+q1.
+- both elements can be styled by #text
+- seems to be considered as invalid by html because in html classes need to have unique names 
+
+q2. 
+- if they've both got the same then the one more recent overrides the previous one. but so as long as they're both of equal priority .
+
+
+
