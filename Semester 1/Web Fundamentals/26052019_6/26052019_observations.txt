@@ -1,0 +1,43 @@
+observations for lab 6
+
+task 1
+- when I change the td to td the bold from the heading goes away
+
+task 2
+- I tried changing both colspan vaue and content length, but I didn't see any results in the size of the cell, caused by colspan value.
+
+Question 1
+a) I will conclude that its the length of content that is added 
+b) from my experiment, no relationship 
+
+
+task 5
+question 2
+a) <div> will separate the code but its not going to create the lined display a table needs 
+b) You can use it to organize the code but not the table itself 
+c) colspan increases the width of the table (horizontally0 
+whilst rowspan increases its height (vertical) 
+
+
+
+observations
+Changing the table border value changes how thick the table border looks.
+Adding CSS borders gives each cell its own border and makes the table clearer.
+Using different colours for borders helps distinguish between lectures and tutorials.
+Alternate row colours make the timetable easier to read.
+Text wrapping allows long words or sentences to fit inside cells without making the table too wide.
+Setting fixed width and height makes all cells the same size.
+Using percentage sizes makes the table adjust to different screen sizes, while pixel sizes keep it fixed.
+
+
+
+q1
+Yes, but embedded CSS is better because it keeps the HTML cleaner and allows easier changes.
+q2
+The table should use a size that fits the screen, usually around 100% width. It was determined by testing different sizes and checking if scrolling was needed.
+q3
+Yes, by setting a specific width and height using pixels.
+q4
+Yes, by using percentage sizes so it can adjust according to the screen size.
+q5
+Yes, by using percentage sizes for the cells so they adjust when the table changes size.
