@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce User Registration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333333;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #1a73e8;
+    }
+
+    fieldset {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #1a73e8;
+      padding: 0 10px;
+    }
+
+    .form-row {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    input:focus, select:focus {
+      border-color: #1a73e8;
+      outline: none;
+    }
+
+    .radio-group, .checkbox-group {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-top: 5px;
+    }
+
+    .radio-group label, .checkbox-group label {
+      font-weight: normal;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #1a73e8;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-submit:hover {
+      background-color: #1557b0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>E-Commerce User Registration</h2>
+    
+    <form action="submitted_success.html" method="get">
+      
+      <!-- Personal Details -->
+      <fieldset>
+        <legend>Personal Details</legend>
+        
+        <div class="form-row">
+          <label for="salutation">Salutation</label>
+          <select id="salutation" name="salutation">
+            <option value="mr">Mr.</option>
+            <option value="ms">Ms.</option>
+            <option value="dr">Dr.</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-row">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+      </fieldset>
+
+      <!-- Account & Contact Info -->
+      <fieldset>
+        <legend>Contact & Account Information</legend>
+        
+        <div class="form-row">
+          <label for="email">E-mail Address</label>
+          <input type="email" id="email" name="email" placeholder="example@domain.com" required />
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+60123456789" required />
+        </div>
+
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" minlength="8" required />
+        </div>
+      </fieldset>
+
+      <!-- Preferences -->
+      <fieldset>
+        <legend>Shopping Preferences</legend>
+        
+        <div class="form-row">
+          <label>Preferred Contact Method</label>
+          <div class="radio-group">
+            <input type="radio" id="pref_email" name="contact_pref" value="email" checked />
+            <label for="pref_email">Email</label>
+            
+            <input type="radio" id="pref_sms" name="contact_pref" value="sms" />
+            <label for="pref_sms">SMS</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="checkbox-group">
+            <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked />
+            <label for="newsletter">Subscribe to weekly deals newsletter</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn-submit">Complete Registration</button>
+    </form>
+  </div>
+
+</body>
+</html>

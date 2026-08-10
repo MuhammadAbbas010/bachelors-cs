@@ -1,0 +1,78 @@
+WEB1201 Lab 7 - Forms
+Name: Abbas
+ID: 26052019
+
+================================================================================
+QUESTIONS 1: Form Fundamentals
+================================================================================
+1. Purpose of HTML forms:
+They let users input data and send it to a server or web page for processing.
+
+2. How form data is used:
+Data gets sent to a server (like PHP/XAMPP) to store in a database or process user info. Client-side JS can also intercept it.
+
+3. Main terms:
+- Controls/Widgets: Interactive parts of a form like inputs and buttons.
+- Native Widgets: Built-in HTML controls (text box, radio button, select box).
+- Labels: Text attached to a widget describing what to fill in.
+- Form Handling: Server or client scripts processing submitted data.
+
+4. Name given to editable elements:
+Control elements, widgets, or controls.
+
+
+================================================================================
+QUESTIONS 2: Localization & Validation
+================================================================================
+1. Website localization:
+Adapting a website's language, format, and content for a specific country or region.
+
+2. How localization applies to forms:
+Different countries use different address layouts, phone number formats, and name structures (e.g. given/family names, special characters).
+
+3. Validation:
+Checking if user input matches the required format before submitting or saving it.
+
+4. Email field validation:
+HTML5 checks if the input has an '@' and a domain name (like user@mail.com).
+
+5. Validate Sunway student email:
+Use the pattern attribute with regex:
+pattern="^[a-zA-Z0-9._%+-]+@imail\.sunway\.edu\.my$"
+
+6. Date of birth validation:
+Check if format is YYYY-MM-DD, set min/max dates so users can't pick future dates, and make sure the date actually exists.
+
+
+================================================================================
+TASK 1: Widget & Data Types Table
+================================================================================
+Field Name     | Type   | Example Data             | Validation
+---------------|--------|--------------------------|--------------------------------
+First Name     | text   | John                     | Letters, spaces, dashes only
+Salutation     | select | Mr., Ms.                 | Select from list
+IC Number      | text   | 010203-14-5566           | 12 digits + dashes
+E-mail         | email  | student@imail.sunway.my  | Valid email format
+Mobile Phone   | tel    | +6012-3456789            | Numbers and + symbol
+Date of Birth  | date   | 2002-05-15               | Valid past date
+
+
+================================================================================
+QUESTIONS 3: Field Sizing & Layout
+================================================================================
+1. Does field size include spaces/newlines?
+Yes, space characters and newlines count toward max length limits.
+
+2. Why use <div> for layout:
+It groups labels and inputs together making it easy to style them row by row using CSS.
+
+3. Can you style without <div>?
+Yes, you can set `display: block` directly on labels or use CSS grid on the form element.
+
+4. Why id must be unique:
+So labels, CSS selectors, and JS scripts target the exact right input without breaking.
+
+
+================================================================================
+TASK 2: Test Cases (26052019_test_Cases.txt
+================================================================================
