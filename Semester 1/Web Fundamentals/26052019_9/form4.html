@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form 4 - Survey & Feedback</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="form4.css">
+</head>
+<body>
+
+  <div class="survey-container">
+    <h2>Customer Feedback Survey</h2>
+    <p class="subtitle">We value your opinion to improve our service.</p>
+
+    <form>
+      <!-- Personal Info -->
+      <div class="field-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="John Doe">
+      </div>
+
+      <!-- Star Rating -->
+      <div class="field-group">
+        <label>Overall Rating</label>
+        <div class="star-rating">
+          <input type="radio" id="star5" name="rating" value="5"><label for="star5" class="fas fa-star"></label>
+          <input type="radio" id="star4" name="rating" value="4"><label for="star4" class="fas fa-star"></label>
+          <input type="radio" id="star3" name="rating" value="3"><label for="star3" class="fas fa-star"></label>
+          <input type="radio" id="star2" name="rating" value="2"><label for="star2" class="fas fa-star"></label>
+          <input type="radio" id="star1" name="rating" value="1"><label for="star1" class="fas fa-star"></label>
+        </div>
+      </div>
+
+      <!-- Comments with Character Counter -->
+      <div class="field-group">
+        <label>Comments</label>
+        <textarea id="comments" maxlength="200" rows="4" placeholder="Write feedback..."></textarea>
+        <div class="char-count"><span id="count">0</span>/200</div>
+      </div>
+
+      <!-- Recommendation Toggle Switch -->
+      <div class="field-group toggle-row">
+        <span>Would you recommend us?</span>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Survey</button>
+    </form>
+  </div>
+
+  <script>
+    const textarea = document.getElementById('comments');
+    const count = document.getElementById('count');
+    textarea.addEventListener('input', () => {
+      count.textContent = textarea.value.length;
+    });
+  </script>
+</body>
+</html>

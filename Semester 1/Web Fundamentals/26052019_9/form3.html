@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form 3 - Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="form3.css">
+</head>
+<body>
+
+  <div class="login-card">
+    <h2>Welcome Back</h2>
+    
+    <form>
+      <!-- Floating Label Email -->
+      <div class="floating-group">
+        <input type="email" id="email" placeholder=" " required>
+        <label for="email">Email Address</label>
+      </div>
+
+      <!-- Floating Label Password -->
+      <div class="floating-group">
+        <input type="password" id="password" placeholder=" " required>
+        <label for="password">Password</label>
+      </div>
+
+      <div class="form-actions">
+        <label class="remember-me">
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+
+      <div class="divider">Or continue with</div>
+
+      <div class="social-buttons">
+        <button type="button" class="social-btn"><i class="fab fa-google"></i> Google</button>
+        <button type="button" class="social-btn"><i class="fab fa-github"></i> GitHub</button>
+      </div>
+
+      <p class="signup-text">
+        Don't have an account? <a href="#">Sign Up</a>
+      </p>
+    </form>
+  </div>
+
+</body>
+</html>

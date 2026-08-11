@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent-Staff Appointment Scheduling</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <header class="app-header">
+      <h1>Parent-Staff Appointment Scheduling</h1>
+      <p>Schedule a meeting with school staff members quickly and easily.</p>
+    </header>
+
+    <!-- TASK 5: Progress Bar Structure -->
+    <section class="card progress-section">
+      <div class="step-indicators">
+        <div class="step-badge active" id="step1-badge">1 Staff & Details</div>
+        <div class="step-badge" id="step2-badge">2 Time Slot</div>
+        <div class="step-badge" id="step3-badge">3 Confirm</div>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p class="progress-label" id="progress-label">Progress: 0% Complete (Select Staff & Details)</p>
+    </section>
+
+    <div class="main-layout">
+      <!-- TASK 3: Staff Directory Filtering -->
+      <section class="card staff-section">
+        <h2>1. Find a Staff Member</h2>
+        <div class="form-group">
+          <label for="staff-search">Search Staff or Department:</label>
+          <input type="search" id="staff-search" placeholder="Type a name or department (e.g., Math)...">
+        </div>
+
+        <div class="staff-grid" id="staff-grid">
+          <!-- Staff cards rendered dynamically via JS -->
+        </div>
+        <p class="empty-msg" id="empty-msg" hidden>No staff members found matching your search query.</p>
+      </section>
+
+      <!-- TASK 1: Appointment Request Form -->
+      <section class="card form-section">
+        <h2>2. Appointment Details</h2>
+        <form id="appointment-form" novalidate>
+          <div class="form-group">
+            <label for="parent-name">Parent Name *</label>
+            <input type="text" id="parent-name" name="parent-name" required>
+            <span class="error-text" id="name-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="parent-email">Email *</label>
+            <input type="email" id="parent-email" name="parent-email" required>
+            <span class="error-text" id="email-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred-date">Preferred Date *</label>
+            <input type="date" id="preferred-date" name="preferred-date" required>
+            <span class="error-text" id="date-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="selected-staff-display">Selected Staff</label>
+            <input type="text" id="selected-staff-display" readonly placeholder="Click a staff card above" required>
+            <span class="error-text" id="staff-error" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="submit-details-btn">Continue to Time Slots</button>
+        </form>
+      </section>
+
+      <!-- TASK 2: Time-Slot Picker State Machine -->
+      <section class="card slots-section" id="slots-section">
+        <h2>3. Select a Time Slot</h2>
+        <div class="slot-grid" id="slot-grid">
+          <!-- Slot buttons rendered dynamically via JS -->
+        </div>
+
+        <div class="confirmation-banner" id="slot-confirmation" aria-live="polite">
+          Please select an available time slot above.
+        </div>
+      </section>
+
+      <!-- TASK 4: Confirmation Composer -->
+      <section class="card composer-section" id="composer-section">
+        <h2>4. Meeting Topic & Confirmation</h2>
+        <div class="form-group">
+          <label for="meeting-topic">Meeting Topic</label>
+          <select id="meeting-topic" name="meeting-topic">
+            <option value="" disabled selected>-- Select a Topic --</option>
+            <option value="general">General Progress</option>
+            <option value="behavior">Behavior & Support</option>
+            <option value="academic">Academic Concerns</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="final-message">Confirmation Message</label>
+          <textarea id="final-message" rows="5" readonly placeholder="Your generated appointment summary will appear here..."></textarea>
+        </div>
+
+        <button type="button" class="btn btn-success" id="finish-btn">Confirm & Finalize Appointment</button>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form 2 - Registration Info</title>
+  <link rel="stylesheet" href="form2.css">
+</head>
+<body>
+
+  <div class="split-container">
+    <!-- Left Panel with Background Image -->
+    <div class="left-panel"></div>
+
+    <!-- Right Panel with Form -->
+    <div class="right-panel">
+      <h2>Registration Info</h2>
+      
+      <form>
+        <div class="input-group">
+          <input type="text" id="name" placeholder="Name" required>
+        </div>
+
+        <div class="input-group">
+          <input type="date" id="birthdate" required>
+        </div>
+
+        <div class="input-group">
+          <select id="gender" required>
+            <option value="" disabled selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-group">
+          <input type="tel" id="phone" placeholder="Phone" required>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

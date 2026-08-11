@@ -1,0 +1,288 @@
+/* ==========================================================================
+   GLOBAL RESETS & BOX MODEL
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.app-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.app-header h1 {
+  color: #064e3b;
+  font-size: 1.8rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  color: #064e3b;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ecfdf5;
+  padding-bottom: 5px;
+}
+
+/* ==========================================================================
+   FORM & INPUT STATES (TASK 1 & ACCESSIBILITY)
+   ========================================================================== */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #f9fafb;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+  background-color: #ffffff;
+}
+
+/* Validation Invalid State */
+input.invalid, select.invalid {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 4px;
+  min-height: 1.2em;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: #059669;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #047857;
+}
+
+.btn-success {
+  background-color: #2563eb;
+  color: #ffffff;
+  width: 100%;
+}
+
+.btn-success:hover {
+  background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   PROGRESS BAR (TASK 5)
+   ========================================================================== */
+.step-indicators {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.step-badge {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.step-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #1d4ed8;
+  transition: width 300ms ease;
+}
+
+.progress-label {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: #1e40af;
+}
+
+/* ==========================================================================
+   STAFF DIRECTORY GRID (TASK 3)
+   ========================================================================== */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.staff-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  background: #f9fafb;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.staff-card:hover {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.staff-card.selected {
+  border: 2px solid #059669;
+  background: #d1fae5;
+}
+
+.staff-card h3 {
+  font-size: 1rem;
+  color: #111827;
+}
+
+.staff-card p {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.empty-msg {
+  color: #dc2626;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   TIME SLOT STATE MACHINE (TASK 2)
+   ========================================================================== */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.slot {
+  padding: 12px 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/* Available State (Green) */
+.slot.available {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.slot.available:hover {
+  background-color: #d1fae5;
+}
+
+/* Booked State (Gray / Disabled) */
+.slot.booked {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  border-color: #e5e7eb;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Selected State (Blue) */
+.slot.selected {
+  background-color: #eff6ff !important;
+  color: #1e40af !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.confirmation-banner {
+  padding: 12px;
+  background-color: #ecfdf5;
+  border: 1px solid #10b981;
+  border-radius: 6px;
+  color: #065f46;
+  font-weight: 600;
+  text-align: center;
+}

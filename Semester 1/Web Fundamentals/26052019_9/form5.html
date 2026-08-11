@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form 5 - Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="form5.css">
+</head>
+<body>
+
+  <div class="contact-card">
+    <!-- Left Column -->
+    <div class="info-col">
+      <h2>Contact Us</h2>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Street Name, City</p>
+      <p><i class="fas fa-phone"></i> +123 456 7890</p>
+      <p><i class="fas fa-envelope"></i> info@example.com</p>
+    </div>
+
+    <!-- Right Column (Form) -->
+    <div class="form-col">
+      <form>
+        <div class="field">
+          <input type="text" placeholder="Name" minlength="3" required>
+        </div>
+
+        <div class="field">
+          <input type="email" placeholder="Email" required>
+        </div>
+
+        <div class="field">
+          <textarea placeholder="Message (min 20 chars)" minlength="20" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="send-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
