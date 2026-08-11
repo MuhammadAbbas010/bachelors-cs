@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4 - Mouse Events</title>
+</head>
+<body>
+    <h1>Task 4: Mouse Over & Mouse Out Events</h1>
+    <ul>
+        <li><span id="targetWord">Hover over these specific words</span></li>
+    </ul>
+
+    <script>
+        const word = document.getElementById("targetWord");
+
+        word.addEventListener("mouseover", function() {
+            alert("Mouse over the words!");
+        });
+
+        word.addEventListener("mouseout", function() {
+            alert("Mouse out from the words!");
+        });
+    </script>
+</body>
+</html>

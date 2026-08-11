@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4 - Mini Challenge</title>
+</head>
+<body>
+    <h1>Task 4 Mini-Challenge</h1>
+    <p><span id="challengeWord" style="font-weight: bold; cursor: pointer;">Hover over this text repeatedly!</span></p>
+
+    <script>
+        let hoverCount = 0;
+        const target = document.getElementById("challengeWord");
+
+        target.addEventListener("mouseover", function() {
+            hoverCount++;
+            
+            if (hoverCount <= 5) {
+                alert("Hover count: " + hoverCount);
+            } else if (hoverCount > 10) {
+                alert("Triggered again! Total count: " + hoverCount);
+            }
+        });
+    </script>
+</body>
+</html>

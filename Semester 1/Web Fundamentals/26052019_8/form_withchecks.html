@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 8 - Form with JavaScript Validation</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 12px; }
+        label { display: inline-block; width: 160px; font-weight: bold; }
+        input, select { padding: 5px; width: 250px; }
+        .error { border: 2px solid red; background-color: #ffe6e6; }
+        .error-message { color: red; font-size: 12px; margin-left: 10px; }
+        .submit-btn { margin-top: 15px; padding: 8px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Sunway Student Registration Form</h2>
+    <form id="studentForm" onsubmit="return validateForm();">
+        
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName">
+            <span id="firstNameError" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName">
+            <span id="lastNameError" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="studentID">Student ID:</label>
+            <input type="text" id="studentID" name="studentID">
+            <span id="studentIDError" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="course">Course:</label>
+            <select id="course" name="course">
+                <option value="">-- Select Course --</option>
+                <option value="CS">Computer Science</option>
+                <option value="IT">Information Technology</option>
+                <option value="IS">Information Systems</option>
+            </select>
+            <span id="courseError" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+            <span id="dobError" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail Address:</label>
+            <input type="email" id="email" name="email">
+            <span id="emailError" class="error-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile">
+            <span id="mobileError" class="error-message"></span>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Form</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Reset previous highlights
+            document.querySelectorAll("input, select").forEach(el => el.classList.remove("error"));
+            document.querySelectorAll(".error-message").forEach(el => el.innerText = "");
+
+            // Helper validation function
+            function checkField(id, errorId, message) {
+                const field = document.getElementById(id);
+                if (!field.value.trim()) {
+                    field.classList.add("error");
+                    document.getElementById(errorId).innerText = message;
+                    isValid = false;
+                }
+            }
+
+            checkField("firstName", "firstNameError", "First name is required.");
+            checkField("lastName", "lastNameError", "Last name is required.");
+            checkField("studentID", "studentIDError", "Student ID is required.");
+            checkField("course", "courseError", "Please select a course.");
+            checkField("dob", "dobError", "Date of birth is required.");
+            checkField("email", "emailError", "Valid email is required.");
+            checkField("mobile", "mobileError", "Mobile number is required.");
+
+            if (!isValid) {
+                alert("Please correct the highlighted fields before submitting.");
+            } else {
+                alert("Form submitted successfully!");
+            }
+
+            return isValid; // Prevents refresh if false
+        }
+    </script>
+</body>
+</html>

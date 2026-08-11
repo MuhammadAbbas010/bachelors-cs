@@ -1,0 +1,119 @@
+/* Trillium Media Design - Lab 3 Target Stylesheet */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #c0e0a0;
+    background-image: url('../images/bg.png');
+    background-repeat: repeat-x;
+    font-family: Verdana, Arial, sans-serif;
+    color: #000000;
+    padding: 20px;
+}
+
+#wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #d8f0c0;
+    border: 1px solid #336600;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    background-color: #d8f0c0;
+    background-image: url('../images/trilliumbanner.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 120px;
+    padding-left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    color: #2e6b12;
+    font-size: 32px;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+nav {
+    background-color: #d8f0c0;
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    background-color: #2e6b12;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.nav-btn:hover {
+    background-color: #1b420a;
+}
+
+main {
+    padding: 20px 30px;
+    background-color: #d8f0c0;
+    background-image: url('../images/trilliumlogo.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    min-height: 350px;
+}
+
+h2 {
+    color: #2e6b12;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', serif;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-image: url('../images/trilliumlogo.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px 24px;
+    padding-left: 32px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+ul {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+footer {
+    background-color: #d8f0c0;
+    padding: 20px;
+    font-size: 12px;
+    color: #2e6b12;
+}
+
+footer a {
+    color: #2e6b12;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-bottom: 5px;
+}

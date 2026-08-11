@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="readme">Something you can read</p>
+    <p id="display"></p>
+    <script>
+        document.getElementById("display").innerHTML = "Hello World";
+    </script>
+    
+
+    <p id="readme">Something you can read</p>
+    <p id="display"></p>
+    <script>
+        var getText = document.getElementById("readme").innerHTML;
+        document.getElementById("display").innerHTML = getText;
+    </script>
+    
+</body>
+</html>

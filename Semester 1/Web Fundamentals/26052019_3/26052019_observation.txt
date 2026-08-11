@@ -1,0 +1,127 @@
+WEB1201 Web Fundamentals - Lab 3: Adding Visual Elements
+Student Name: abbas
+Student ID: 26052019
+
+
+QUESTIONS 1: img Tag Attributes
+
+1. Attributes of the <img> tag and their functions:
+   - src: Specifies the source URL or relative file path to the image file.
+   - height: Defines the display height of the image in pixels.
+   - width: Defines the display width of the image in pixels.
+   - alt: Provides alternative text describing the image for accessibility/screen readers or if the image fails to load.
+   - title: Provides advisory information (displays as a tooltip on hover).
+   - id: Assigns a unique identifier to the element for CSS styling or JS targeting.
+
+2. File name and file extension from <img src="logo.gif" height="200" width="400" alt="My company name">:
+   - File Name: logo
+   - File Extension: .gif
+
+
+
+TASK 1: Border & Box Model Observations
+
+Observations & Discussion:
+- Adding a border to a block element (like <h1>) causes the border to span 100% of the viewport width.
+- Adding padding creates empty breathing space between the element's inner text content and its outer border line.
+- Applying distinct borders per side (top, bottom, left, right) creates structured visual containers.
+- The CSS Box Model calculates total element size as: Content + Padding + Border + Margin.
+
+Conclusion:
+Padding and borders can be manipulated independently to control element spacing without altering text flow.
+
+
+
+TASK 2: Height & Width Experiment Table
+
+Width (px) | Height (px) | Description / Observation
+-----------|-------------|---------------------------------------------------------
+800        | 400         | Baseline image size (16:9 ratio).
+200        | 200         | Image scaled down but stretched vertically (1:1 ratio).
+200        | 1000        | Image severely squeezed horizontally and stretched tall.
+1000       | 200         | Image stretched wide, flat, and visually distorted.
+200        | not set     | Width scales down to 200px; height adjusts automatically maintaining aspect ratio.
+not set    | 200         | Height scales to 200px; width adjusts automatically maintaining aspect ratio.
+not set    | not set     | Image renders at its natural intrinsic dimensions.
+
+Conclusion:
+Setting both width AND height explicitly distorts the image aspect ratio unless calculated perfectly. To maintain aspect ratio, set only one dimension (or use CSS width: 100%; height: auto;).
+
+
+
+QUESTIONS 2: Resolution & Image Types
+
+1. What is resolution and how is it measured?
+   Resolution is the level of detail held in an image, measured in PPI (Pixels Per Inch) for screen displays or DPI (Dots Per Inch) for print.
+
+2. Difference between screen and printed resolution:
+   Screen resolution requires lower pixel density (typically 72–96 PPI) for fast web loading, whereas print media requires high density (300+ DPI) for sharp ink output.
+
+3. Colour formation on screens vs. printed media:
+   - Screen (Additive / RGB): Uses Red, Green, and Blue light combined to produce white light.
+   - Printed Media (Subtractive / CMYK): Uses Cyan, Magenta, Yellow, and Key (Black) ink to absorb light; combining all produces black. Spot/Pantone colors use pre-mixed custom inks.
+
+4. Typical web image resolution:
+   72 PPI to 96 PPI.
+
+5. Reason for this resolution:
+   Computer displays cannot physically render higher pixel densities than their hardware specs allow, so higher PPIs only increase file size and slow down page load times without visual improvement.
+
+6. Difference between vector and raster images:
+   - Raster: Made of a fixed grid of colored pixels. Scales down well, but loses quality (becomes pixelated) when scaled up.
+   - Vector: Made of mathematical formulas (lines, curves, anchor points). Scales infinitely without quality loss.
+
+7. Examples of 4 file formats each:
+   - Raster Formats: .png, .jpg / .jpeg, .gif, .webp
+   - Vector Formats: .svg, .eps, .ai, .pdf
+
+8. Usage examples for each:
+   - Raster: Photographs, complex shaded illustrations, web graphics.
+   - Vector: Logos, typography, simple icons, graphic diagrams.
+
+9. Usage on the web:
+   Use vectors (.svg) for scalable UI elements like logos, buttons, and icons to keep crisp display across all device screens. Use rasters (.jpg/.png) for complex photographic assets where mathematical paths cannot represent color gradients efficiently.
+
+
+
+QUESTIONS 3: Resolution & Image Size
+
+1. Relationship between resolution and number of pixels:
+   Total pixel count equals width in pixels multiplied by height in pixels. Higher resolution in a fixed physical area increases the total pixel count.
+
+2. Meaning of a large or small raster image:
+   - Large raster: Contains high pixel dimensions (e.g., 4000x3000px), producing crisp detail and large file sizes.
+   - Small raster: Contains low pixel dimensions (e.g., 50x50px), producing tiny file sizes but blurring if enlarged.
+
+3. How to specify raster image size:
+   Set image dimensions using HTML `width`/`height` attributes or CSS `width`/`height` properties in pixels.
+
+4. Can you specify vector image size?
+   Yes, vector sizes are specified via CSS width/height or the SVG `viewBox` and `width`/`height` XML attributes without affecting pixel grid density.
+
+
+
+TASK 4 & 5: Background Image Testing & Observations
+
+Background Testing Summary:
+- Smaller backgrounds (10x10, 10x20) tile across the entire viewport by default like wallpaper.
+- Applying `background-size: 100%` stretches a tiny raster background across the screen, causing severe pixelation.
+- Using SVG vector backgrounds allows crisp scaling across all screen sizes without tiling distortion.
+- Applying background images to specific elements (like <h1>) with `background-repeat: no-repeat` and `background-position: center` creates clean hero banners and custom icons.
+
+
+
+QUESTIONS 4: Background Image Decisions
+
+1. Should background image be raster or vector?
+   Vector (.svg) is preferred for geometric patterns, gradients, and logos. Raster (.jpg) is better for photos.
+
+2. Circumstances for using either:
+   Use vector when infinite scalability and small file sizes are required. Use raster when background requires complex photorealistic detail.
+
+3. Optimal pixel dimension for background images:
+   For seamless repeating patterns, small tiles (e.g., 20x20px to 100x100px). For full-screen hero banners, 1920x1080px compressed high-quality raster or scalable SVG.
+
+4. Effect of including/excluding background-size:
+   - Excluding `background-size`: Image renders at intrinsic pixel size and tiles across the element.
+   - Including `background-size: cover/contain/100%`: Forces image to scale to fit or fill the element container bounds.

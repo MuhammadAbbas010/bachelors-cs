@@ -1,0 +1,57 @@
+WEB 1201 - Lab 8 .js
+Student: Abbas
+Id: 26052019
+
+QUESTIONS 1: Networking Fundamentals
+a. What is the theoretical number of ports given that it is a 16 bit value? 
+2^16 = 65536
+
+b. Explain the different states in the "STATE" column of the output of the netstat command:
+LISTENING - waiting for incoming connections
+ESTABLISHED - connection is currently active between two devices 
+TIME-WAIT - One side has already closed it but waiting just incase for the other side
+CLOSE_WAIT - Remote device has closed the connection but the local system is waiting for the app to close as well
+CLOSING - Both sides are currently in the process of closing it 
+CLOSED - Connection no longer exists
+
+c. What does netstat -an do? 
+= It displays all active network connections and listening ports using numerical addresses and port numbers.
+
+d. Create the command that shows the fully qualified domain name
+= netstat -f
+
+
+QUESTIONS 2: Execution Order
+question 1 - describe the order of events in javascript?
+= JavaScript executes sequentially top-to-bottom as encountered in the document. The alert dialog blocks parsing, meaning the alert is shown first, and only after dismissing it do the subsequent HTML paragraphs (<p>) display on the screen.
+
+question 2 - How many times have your scripts ran? Explain what triggers the execution of the scripts that you have written so far?
+= The scripts run every time the web page is loaded or refreshed. Page load events and inline triggers (like user clicks or hovers) trigger execution.
+
+
+QUESTIONS 3: External JavaScript & Linking
+a. When will you use an external javascript file?
+= When there is a large amount of .js code required, to declutter the .html file, or to reuse the same script across multiple web pages.
+
+b. Relative vs Absolute links:
+Relative: Path based on the current file/location. Example: js/script.js
+Absolute: Full URL/path to the resource. Example: https://example.com/js/script.js
+
+c. Can external HTTP files use relative links?
+No. Relative links refer to files within the current site/path on the local server. To access a file hosted on a different external server, an absolute URL (http:// or https://) must be used.
+
+
+QUESTIONS 4: Web Hosting, OOP, and Properties
+1. How a website is hosted on a web server and retrieved using ports:
+A web server hosts files and listens on a specific network port (e.g., port 80 for HTTP, port 443 for HTTPS). When a client enters an address in a browser, an HTTP request is sent to the server's IP address and target port. The server receives the request on that listening socket and sends back the requested web resources.
+
+2. (Challenge) What to configure on a router to host a website for external access:
+You need to configure "Port Forwarding" on the router to route incoming external traffic on port 80/443 directly to the local IP address of your internal web server machine.
+
+3. Object-Oriented Concepts:
+(a) Difference between Object and Class: A Class is a blueprint or template defining properties and methods, while an Object is a concrete instance created from that class.
+(b) Method: A function attached to an object that defines an action the object can perform.
+(c) Property: A variable or value attached to an object that describes a characteristic or state of that object.
+
+4. Can you use a JavaScript method to change an element's property?
+Yes. You can invoke DOM methods like `element.setAttribute("style", "color: red;")` or `element.classList.add("active")` to modify an element's underlying properties.

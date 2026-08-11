@@ -1,0 +1,15 @@
+Task 8 - Expected Input Types & Form Mapping
+
+(a) First name                  : text
+(b) Last name                   : text
+(c) Student ID                  : text
+(d) Course taken in Sunway      : select
+(e) Date of Birth               : date
+(f) E-mail address              : email
+(g) Mobile number               : tel
+(h) Address Line 1              : text
+(i) Address Line 2              : text
+(j) Postcode                    : text
+(k) City                        : text
+(l) Country                     : select
+(m) Preferred contact method    : radio
